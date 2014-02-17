@@ -7,7 +7,7 @@
 # All rights reserved - Do Not Redistribute
 #
 
-include_recipe 'jenkins'
+include_recipe 'jenkins::master'
 include_recipe 'database'
 include_recipe 'mysql::server'
 include_recipe 'mysql::client'
