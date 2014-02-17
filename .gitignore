@@ -45,6 +45,9 @@ Icon
 .Spotlight-V100
 .Trashes
 
+# Vagrant
+.vagrant
+
 # Windows
 Thumbs.db
 ehthumbs.db
