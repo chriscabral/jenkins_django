@@ -7,6 +7,8 @@
 # All rights reserved - Do Not Redistribute
 #
 
+include_recipe 'nmap'
+include_recipe 'curl'
 include_recipe 'jenkins::master'
 include_recipe 'mysql::server'
 include_recipe 'mysql::client'
