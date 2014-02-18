@@ -16,7 +16,7 @@ include_recipe 'database'
 include_recipe 'python'
 include_recipe 'git'
 
-mysql_database myschedule do
+mysql_database 'oracle_rules' do
   connection(
     :host     => 'localhost',
     :username => 'root',
