@@ -18,7 +18,9 @@ include_recipe 'git'
 
 mysql_database 'myschedule' do
   connection(
-    :host     => 'localhost'
+    :host     => 'localhost',
+    :username => 'root',
+    :password => node['mysql']['server_root_password']
   )
   action :create
 end
