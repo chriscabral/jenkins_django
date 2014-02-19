@@ -27,5 +27,5 @@ mysql_database 'myschedule' do
 end
 
 jenkins_plugin 'git-client' do
-  version '1.3'
+  version '1.6.2'
 end
