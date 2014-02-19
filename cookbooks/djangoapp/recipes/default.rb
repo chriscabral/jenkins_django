@@ -26,9 +26,11 @@ mysql_database 'myschedule' do
   action :create
 end
 
-jenkins_plugin 'ssh-credentials' do
-  version '1.5.1'
-end
+{'ssh-credentials' => '1.5.1'}.each{|key, value| 
+  jenkins_plugin key do
+    version value
+  end
+}
 
 jenkins_plugin 'scm-api' do
   version '0.1'
