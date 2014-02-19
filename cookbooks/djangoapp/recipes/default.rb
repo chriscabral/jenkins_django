@@ -29,3 +29,7 @@ end
 jenkins_plugin 'git-client' do
   version '1.6.2'
 end
+
+jenkins_plugin 'git-server' do
+  version '1.3'
+end
