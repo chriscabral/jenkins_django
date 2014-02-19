@@ -39,7 +39,7 @@ jenkins_plugin 'credentials' do
 end
 
 jenkins_plugin 'multiple-scms' do
-  version '2.0.1'
+  version '0.3'
 end
 
 jenkins_plugin 'parameterized-trigger' do
