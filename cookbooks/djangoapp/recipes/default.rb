@@ -38,3 +38,4 @@ jenkins_plugin 'git' do
   version '2.0.1'
 end
 
+jenkins_command 'safe-restart'
