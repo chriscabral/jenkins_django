@@ -26,12 +26,28 @@ mysql_database 'myschedule' do
   action :create
 end
 
-jenkins_plugin 'git-client' do
-  version '1.6.2'
+jenkins_plugin 'ssh-credentials' do
+  version '1.5.1'
 end
 
-jenkins_plugin 'git-server' do
-  version '1.3'
+jenkins_plugin 'scm-api' do
+  version '0.1'
+end
+
+jenkins_plugin 'credentials' do
+  version '1.9.3'
+end
+
+jenkins_plugin 'multiple-scms' do
+  version '2.0.1'
+end
+
+jenkins_plugin 'parameterized-trigger' do
+  version '2.0.1'
+end
+
+jenkins_plugin 'git-client' do
+  version '1.6.0'
 end
 
 jenkins_plugin 'git' do
