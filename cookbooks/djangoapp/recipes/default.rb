@@ -42,10 +42,6 @@ jenkins_plugin 'multiple-scms' do
   version '0.3'
 end
 
-jenkins_plugin 'parameterized-trigger' do
-  version '2.0.1'
-end
-
 jenkins_plugin 'git-client' do
   version '1.6.0'
 end
