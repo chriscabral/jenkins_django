@@ -25,3 +25,7 @@ mysql_database 'myschedule' do
   )
   action :create
 end
+
+jenkins_plugin 'github' do
+  version '1.3'
+end
