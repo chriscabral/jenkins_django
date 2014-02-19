@@ -26,6 +26,15 @@ mysql_database 'myschedule' do
   action :create
 end
 
+jenkins_plugin 'git-client' do
+  version '1.6.2'
+end
+
+jenkins_plugin 'git-server' do
+  version '1.3'
+end
+
 jenkins_plugin 'git' do
   version '2.0.1'
 end
+
