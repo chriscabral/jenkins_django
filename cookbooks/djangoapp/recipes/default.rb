@@ -54,7 +54,6 @@ package 'python-dev'
 user "developer" do
   supports :manage_home => true
   uid 1234
-  gid "developer"
   home "/home/developer"
   shell "/bin/bash"
   password "$1$3WfMmIJB$C64eMimUsCaJzDL4zMn8Z/"
