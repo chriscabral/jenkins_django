@@ -62,7 +62,7 @@ execute 'install prerequisites' do
 end
 
 execute 'create project' do
-  command "source /home/vagrant/venv/bin/activate;cd /home/vagrant;django-admin.py startproject #{node.default['djangoapp']['project']['name']}"
+  command ". /home/vagrant/venv/bin/activate;cd /home/vagrant;django-admin.py startproject #{node.default['djangoapp']['project']['name']}"
 end
 
 execute 'commit project' do
