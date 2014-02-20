@@ -108,6 +108,6 @@ file "/home/vagrant/test.py" do
 end
 
 execute 'test wsgi' do
-  command "source /home/vagrant/venv/bin/activate;cd /home/vagrant;uwsgi --http :8000 --wsgi-file test.py"
+  command "source /home/vagrant/venv/bin/activate;cd /home/vagrant;uwsgi --http :8000 --wsgi-file test.py &"
 end
 
