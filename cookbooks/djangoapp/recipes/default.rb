@@ -87,7 +87,7 @@ template xml do
     })
 end
 
-jenkins_job 'new job' do
+jenkins_job node.default['djangoapp']['project']['name'] do
   config xml
 end
 
