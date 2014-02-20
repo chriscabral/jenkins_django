@@ -70,4 +70,8 @@ python_virtualenv "/home/vagrant/venv" do
   action :create
 end
 
+execute 'source /home/vagrant/venv/bin/activate' do
+  command 'echo "hello world"'
+end
+
 
