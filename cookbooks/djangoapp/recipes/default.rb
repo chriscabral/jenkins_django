@@ -53,3 +53,14 @@ jenkins_plugin 'git' do
 end
 
 jenkins_command 'safe-restart'
+
+python_pip "gunicorn" do
+  virtualenv "/home/vagrant/venv"
+  action :install
+end
+
+python_pip "django" do
+  version "1.6.2"
+  action :install
+end
+
