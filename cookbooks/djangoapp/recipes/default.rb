@@ -64,6 +64,7 @@ execute 'commit project' do
 end
 
 jenkins_plugins = {
+  'postbuild-task' => '1.8',
   'ssh-credentials' => '1.5.1', 
   'scm-api' => '0.1',
   'credentials' => '1.9.3',
