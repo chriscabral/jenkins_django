@@ -56,9 +56,15 @@ end
 execute 'delete project' do
   command "cd /home/vagrant;rm -rf #{node.default['djangoapp']['project']['name']}"
 end
-execute 'create project' do
-  command "source /home/vagrant/venv/bin/activate;/home/vagrant/venv/bin/pip install uwsgi; /home/vagrant/venv/bin/pip install gunicorn;cd /home/vagrant;django-admin.py startproject #{node.default['djangoapp']['project']['name']}"
+
+execute 'install prerequisites' do
+  command "/home/vagrant/venv/bin/pip install uwsgi; /home/vagrant/venv/bin/pip install gunicorn;/home/vagrant/venv/bin/pip install django;"
 end
+
+execute 'create project' do
+  command "source /home/vagrant/venv/bin/activate;cd /home/vagrant;django-admin.py startproject #{node.default['djangoapp']['project']['name']}"
+end
+
 execute 'commit project' do
   command "cd /home/vagrant/#{node.default['djangoapp']['project']['name']}; git init; git add -A; git commit -m 'initial commit'"
 end
