@@ -71,7 +71,7 @@ python_virtualenv "/home/vagrant/venv" do
 end
 
 execute 'create project' do
-  command "cd /home/vagrant;rm -rf helloworld;source /home/vagrant/venv/bin/activate; django-admin.py startproject #{node.default['djangoapp']['project']['name']}"
+  command "cd /home/vagrant;rm -rf helloworld;source /home/vagrant/venv/bin/activate; pip install django; django-admin.py startproject #{node.default['djangoapp']['project']['name']}"
 end
 
 
