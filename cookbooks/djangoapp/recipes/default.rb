@@ -62,6 +62,10 @@ end
 
 
 python_virtualenv "/home/vagrant/venv" do
+  action :delete
+end
+
+python_virtualenv "/home/vagrant/venv" do
   owner "developer"
   group "developer"
   action :create
