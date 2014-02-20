@@ -64,3 +64,15 @@ python_pip "django" do
   action :install
 end
 
+package 'build-essential'
+package 'gcc'
+package 'g++'
+package 'libpcre3'
+package 'libpcre3-dev'
+package 'libssl-dev'
+package 'python-dev'
+
+execute 'source /home/vagrant/venv/bin/activate' do
+  command 'django-admin.py startapp example'
+  command 'cd example;git init;git add -A;git commit -m "initial commit";'
+end
