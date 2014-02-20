@@ -70,9 +70,13 @@ python_virtualenv "/home/vagrant/venv" do
   action :create
 end
 
-execute 'create project' do
+execute 'delete project' do
   command "cd /home/vagrant;rm -rf #{node.default['djangoapp']['project']['name']}"
+end
+execute 'create project' do
   command "source /home/vagrant/venv/bin/activate;django-admin.py startproject #{node.default['djangoapp']['project']['name']}"
+end
+execute 'commit project' do
   command "cd /home/vagrant/#{node.default['djangoapp']['project']['name']}; git init; git add -A; git commit -m 'initial commit'"
 end
 
