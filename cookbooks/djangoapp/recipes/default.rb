@@ -51,8 +51,10 @@ package 'libpcre3-dev'
 package 'libssl-dev'
 package 'python-dev'
 
-python_pip "gunicorn" do
-  virtualenv "/home/vagrant/venv"
+python_virtualenv "/home/vagrant/venv" do
+  owner "vagrant"
+  group "vagrant"
+  action :create
 end
 
 
