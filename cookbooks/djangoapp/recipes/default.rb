@@ -78,16 +78,23 @@ jenkins_plugins.each{|key, value|
   end
 }
 
+git_branch = 'master'
+job_name = "sigar-#{branch}-#{node[:os]}-#{node[:kernel][:machine]}"
 
-# template xml do
-#   source 'custom-config.xml.erb'
-#   variables({
-#       project_name => "#{node.default['djangoapp']['project']['name']}"
-#     })
-# end
+job_config = File.join(node[:jenkins][:node][:home], "#{node.default['djangoapp']['project']['name']}-config.xml")
 
-# jenkins_job 'new job' do
-#   config xml
-# end
+xml = File.join(Chef::Config[:file_cache_path], 'bacon-config.xml')
+
+template xml do
+  source 'custom-config.xml.erb'
+  variables({
+      project_name => "#{node.default['djangoapp']['project']['name']}"
+    })
+end
+
+jenkins_job 'new job' do
+  config xml
+end
+
 jenkins_command 'safe-restart'
 
