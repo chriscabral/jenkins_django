@@ -79,8 +79,6 @@ jenkins_plugins.each{|key, value|
 }
 
 git_branch = 'master'
-job_name = "sigar-#{branch}-#{node[:os]}-#{node[:kernel][:machine]}"
-
 job_config = File.join(node[:jenkins][:node][:home], "#{node.default['djangoapp']['project']['name']}-config.xml")
 
 xml = File.join(Chef::Config[:file_cache_path], 'bacon-config.xml')
