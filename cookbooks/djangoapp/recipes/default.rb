@@ -86,8 +86,8 @@ jenkins_plugins.each{|key, value|
 #     })
 # end
 
-jenkins_job 'new job' do
-  config xml
-end
+# jenkins_job 'new job' do
+#   config xml
+# end
 jenkins_command 'safe-restart'
 
