@@ -6,8 +6,6 @@
 .rake_test_cache
 .rvmrc
 .rbenv-version
-.chef
-.berkshelf
 
 # Emacs
 *~
