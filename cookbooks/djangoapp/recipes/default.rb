@@ -84,7 +84,7 @@ xml = File.join(Chef::Config[:file_cache_path], "#{node.default['djangoapp']['pr
 template xml do
   source 'custom-config.xml.erb'
   variables({
-      project_name => "#{node.default['djangoapp']['project']['name']}"
+      project_name => node.default['djangoapp']['project']['name']
     })
 end
 
