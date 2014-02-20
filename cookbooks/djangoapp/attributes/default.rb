@@ -1,2 +1,2 @@
 
-default.node['mysql']['server_root_password']
+default.node['mysql']['server_root_password'] = 'root'
