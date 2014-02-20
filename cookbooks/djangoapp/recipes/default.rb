@@ -78,8 +78,7 @@ jenkins_plugins.each{|key, value|
   end
 }
 
-git_branch = 'master'
-xml = File.join(Chef::Config[:file_cache_path], "#{node.default['djangoapp']['project']['name']}-config.xml")
+xml = File.join(Chef::Config[:file_cache_path], 'bacon-config.xml')
 
 template xml do
   source 'custom-config.xml.erb'
