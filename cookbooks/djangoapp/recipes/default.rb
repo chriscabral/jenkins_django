@@ -34,13 +34,14 @@ package 'libpcre3-dev'
 package 'libssl-dev'
 package 'python-dev'
 
-user "webapp" do
+user "developer" do
   supports :manage_home => true
   uid 1234
   home "/home/developer"
   shell "/bin/bash"
   password "$1$3WfMmIJB$C64eMimUsCaJzDL4zMn8Z/"
 end
+
 
 python_virtualenv "/home/vagrant/venv" do
   action :delete
