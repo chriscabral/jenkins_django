@@ -57,7 +57,7 @@ execute 'delete project' do
   command "cd /home/vagrant;rm -rf #{node.default['djangoapp']['project']['name']}"
 end
 execute 'create project' do
-  command "source /home/vagrant/venv/bin/activate;pip install gunicorn;cd /home/vagrant;django-admin.py startproject #{node.default['djangoapp']['project']['name']}"
+  command "source /home/vagrant/venv/bin/activate;pip install uwsgi; pip install gunicorn;cd /home/vagrant;django-admin.py startproject #{node.default['djangoapp']['project']['name']}"
 end
 execute 'commit project' do
   command "cd /home/vagrant/#{node.default['djangoapp']['project']['name']}; git init; git add -A; git commit -m 'initial commit'"
@@ -93,4 +93,15 @@ jenkins_job node.default['djangoapp']['project']['name'] do
 end
 
 jenkins_command 'safe-restart'
+
+file "/home/vagrant/test.py" do
+  owner "developer"
+  group "developer"
+  mode "0755"
+  action :create
+end
+
+execute 'test wsgi' do
+  command "source /home/vagrant/venv/bin/activate;cd /home/vagrant;uwsgi --http :8000 --wsgi-file test.py"
+end
 
