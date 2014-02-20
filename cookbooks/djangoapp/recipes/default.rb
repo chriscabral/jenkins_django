@@ -71,7 +71,15 @@ python_virtualenv "/home/vagrant/venv" do
 end
 
 execute 'create project' do
-  command "cd /home/vagrant;rm -rf helloworld;source /home/vagrant/venv/bin/activate; /home/vagrant/venv/bin/pip install django; django-admin.py startproject #{node.default['djangoapp']['project']['name']};cd #{node.default['djangoapp']['project']['name']}; git init; git add -A; git commit -m 'initial commit'"
+  command "cd /home/vagrant"
+  command "rm -rf helloworld"
+  command "source /home/vagrant/venv/bin/activate"
+  command "/home/vagrant/venv/bin/pip install django"
+  command "django-admin.py startproject #{node.default['djangoapp']['project']['name']}"
+  command "cd #{node.default['djangoapp']['project']['name']}"
+  command "git init"
+  command "git add -A"
+  command "git commit -m 'initial commit'"
 end
 
 
