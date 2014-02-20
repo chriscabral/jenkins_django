@@ -1,2 +1,3 @@
 
-default.node['mysql']['server_root_password'] = 'root'
+
+default['project']['name'] = 'helloworld'

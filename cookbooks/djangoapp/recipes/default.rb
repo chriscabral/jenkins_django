@@ -71,7 +71,7 @@ python_virtualenv "/home/vagrant/venv" do
 end
 
 execute 'source /home/vagrant/venv/bin/activate' do
-  command 'echo "hello world"'
+  command "django-admin.py startproject #{djangoapp['project']['name']}"
 end
 
 
