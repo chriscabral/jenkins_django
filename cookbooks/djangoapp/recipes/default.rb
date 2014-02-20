@@ -73,7 +73,7 @@ end
 execute 'create project' do
   command "cd /home/vagrant;rm -rf helloworld"
   command "source /home/vagrant/venv/bin/activate;django-admin.py startproject #{node.default['djangoapp']['project']['name']}"
-  command "cd #{node.default['djangoapp']['project']['name']}; git init; git add -A; git commit -m 'initial commit'"
+  command "cd /home/vagrant/#{node.default['djangoapp']['project']['name']}; git init; git add -A; git commit -m 'initial commit'"
 end
 
 
