@@ -51,3 +51,8 @@ package 'libpcre3-dev'
 package 'libssl-dev'
 package 'python-dev'
 
+python_pip "gunicorn" do
+  virtualenv "/home/vagrant/venv"
+end
+
+
