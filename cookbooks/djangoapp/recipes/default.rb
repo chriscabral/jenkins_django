@@ -79,12 +79,12 @@ jenkins_plugins.each{|key, value|
 }
 
 
-template xml do
-  source 'custom-config.xml.erb'
-  variables({
-      project_name => "#{node.default['djangoapp']['project']['name']}"
-    })
-end
+# template xml do
+#   source 'custom-config.xml.erb'
+#   variables({
+#       project_name => "#{node.default['djangoapp']['project']['name']}"
+#     })
+# end
 
 jenkins_job 'new job' do
   config xml
