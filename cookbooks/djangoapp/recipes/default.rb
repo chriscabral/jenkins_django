@@ -26,23 +26,6 @@ mysql_database 'myschedule' do
   action :create
 end
 
-jenkins_plugins = {
-  'ssh-credentials' => '1.5.1', 
-  'scm-api' => '0.1',
-  'credentials' => '1.9.3',
-  'multiple-scms' => '0.3',
-  'git-client' => '1.6.0',
-  'git' => '2.0.1',
-}
-
-jenkins_plugins.each{|key, value| 
-  jenkins_plugin key do
-    version value
-  end
-}
-
-jenkins_command 'safe-restart'
-
 package 'build-essential'
 package 'gcc'
 package 'g++'
@@ -80,4 +63,31 @@ execute 'commit project' do
   command "cd /home/vagrant/#{node.default['djangoapp']['project']['name']}; git init; git add -A; git commit -m 'initial commit'"
 end
 
+jenkins_plugins = {
+  'ssh-credentials' => '1.5.1', 
+  'scm-api' => '0.1',
+  'credentials' => '1.9.3',
+  'multiple-scms' => '0.3',
+  'git-client' => '1.6.0',
+  'git' => '2.0.1',
+}
+
+jenkins_plugins.each{|key, value| 
+  jenkins_plugin key do
+    version value
+  end
+}
+
+
+template xml do
+  source 'custom-config.xml.erb'
+  variables({
+      project_name => "#{node.default['djangoapp']['project']['name']}"
+    })
+end
+
+jenkins_job 'new job' do
+  config xml
+end
+jenkins_command 'safe-restart'
 
