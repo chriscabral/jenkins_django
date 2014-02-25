@@ -49,6 +49,7 @@ python_virtualenv "/home/vagrant/venv" do
 end
 
 python_virtualenv "/home/vagrant/venv" do
+  interpreter "python3.3"
   owner "jenkins"
   group "jenkins"
   action :create
