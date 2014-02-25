@@ -63,7 +63,7 @@ execute 'install prerequisites' do
 end
 
 execute 'create project' do
-  command ". /home/vagrant/venv/bin/activate;cd /home/vagrant;django-admin.py startproject --template=https://github.com/mycibox/django-twoscoops-project/archive/master.zip --extension=py,rst,html #{node.default['djangoapp']['project']['name']}"
+  command ". /home/vagrant/venv/bin/activate;cd /home/vagrant;django-admin.py startproject --template=https://github.com/mycibox/django-twoscoops-project/archive/master.zip --extension=py,md,rst,html #{node.default['djangoapp']['project']['name']}"
 end
 
 execute 'commit project' do
