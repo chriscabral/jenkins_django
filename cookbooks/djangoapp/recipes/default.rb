@@ -59,7 +59,7 @@ execute 'delete project' do
 end
 
 execute 'install prerequisites' do
-  command "rm -rf /home/vagrant/venv; /home/vagrant/venv/bin/pip install uwsgi; /home/vagrant/venv/bin/pip install gunicorn;/home/vagrant/venv/bin/pip install django;"
+  command "sudo rm -rf /home/vagrant/venv; /home/vagrant/venv/bin/pip install uwsgi; /home/vagrant/venv/bin/pip install gunicorn;/home/vagrant/venv/bin/pip install django;"
 end
 
 execute 'create project' do
