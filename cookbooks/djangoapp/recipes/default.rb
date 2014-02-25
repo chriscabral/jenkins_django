@@ -58,8 +58,16 @@ execute 'delete project' do
   command "cd /home/vagrant;rm -rf #{node.default['djangoapp']['project']['name']}"
 end
 
-execute 'install prerequisites' do
-  command "/home/vagrant/venv/bin/pip install uwsgi; /home/vagrant/venv/bin/pip install gunicorn;/home/vagrant/venv/bin/pip install django;"
+execute 'install uwsgi' do
+  command "/home/vagrant/venv/bin/pip install uwsgi"
+end
+
+execute 'install gunicorn' do
+  command '/home/vagrant/venv/bin/pip install gunicorn'
+end
+
+execute 'install django' do
+  command "/home/vagrant/venv/bin/pip install django"
 end
 
 execute 'create project' do
