@@ -48,8 +48,8 @@ python_virtualenv "/home/vagrant/venv" do
 end
 
 python_virtualenv "/home/vagrant/venv" do
-  owner "developer"
-  group "developer"
+  owner "jenkins"
+  group "jenkins"
   action :create
 end
 
