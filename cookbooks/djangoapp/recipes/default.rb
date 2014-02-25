@@ -26,6 +26,7 @@ mysql_database 'myschedule' do
   action :create
 end
 
+package 'vim'
 package 'build-essential'
 package 'gcc'
 package 'g++'
