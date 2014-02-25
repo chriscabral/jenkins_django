@@ -62,7 +62,7 @@ execute 'install prerequisites' do
 end
 
 execute 'create project' do
-  command ". /home/vagrant/venv/bin/activate;cd /home/vagrant;django-admin.py startproject #{node.default['djangoapp']['project']['name']}"
+  command ". /home/vagrant/venv/bin/activate;cd /home/vagrant;django-admin.py startproject --template=https://github.com/mycibox/django-twoscoops-project/archive/master.zip --extension=py,rst,html #{node.default['djangoapp']['project']['name']}"
 end
 
 execute 'commit project' do
@@ -77,6 +77,11 @@ jenkins_plugins = {
   'multiple-scms' => '0.3',
   'git-client' => '1.6.0',
   'git' => '2.0.1',
+  'violations' => '0.7.11',
+  'cobertura' => '1.9.3',
+  'maven-plugin' => '2.1',
+  'javadoc' => '1.1',
+  'mailer' => '1.8',
 }
 
 jenkins_plugins.each{|key, value| 
@@ -111,4 +116,4 @@ execute 'test wsgi' do
   command "source /home/vagrant/venv/bin/activate;cd /home/vagrant"
 end
 
-#uwsgi --http :8000 --wsgi-file test.py
+#uwsgi --http :8000 --wsgi-file test.pyx  
