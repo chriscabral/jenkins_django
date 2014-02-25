@@ -1,3 +1,3 @@
 
 
-default['djangoapp']['project']['name'] = 'helloworld'
+default[:djangoapp][:project][:name] = 'helloworld'
