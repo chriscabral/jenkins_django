@@ -71,7 +71,7 @@ execute 'install django' do
 end
 
 execute 'create project' do
-  command ". /home/vagrant/venv/bin/activate;cd /home/vagrant;django-admin.py startproject --template=#{node.default[:djangoapp][:project][:gitdownloadurl]} --extension=py,md,rst #{node.default['djangoapp']['project']['name']}"
+  command "source /home/vagrant/venv/bin/activate;pip install gunicorn;cd /home/vagrant;django-admin.py startproject --template=#{node.default['djangoapp']['project']['template']} #{node.default['djangoapp']['project']['name']}"
 end
 
 execute 'commit project' do

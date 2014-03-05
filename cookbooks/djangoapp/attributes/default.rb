@@ -1,4 +1,2 @@
-
-
-default[:djangoapp][:project][:name] = 'helloworld'
-default[:djangoapp][:project][:gitdownloadurl] = 'https://github.com/mycibox/django-base-template/archive/master.zip'
+default['djangoapp']['project']['name'] = 'helloworld'
+default['djangoapp']['project']['template'] = 'https://github.com/chriscabral/djangularjs/archive/master.zip'
